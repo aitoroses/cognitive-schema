@@ -1,5 +1,6 @@
 import click
 from .db import download_schema, generate_profiles
+from .query import load_profiles, construct_prompt, query_openai
 
 @click.group()
 def cli():
@@ -31,6 +32,21 @@ def run(dbname, user, password, host, port):
     """Run all database operations."""
     download_schema(dbname, user, password, host, port)
     generate_profiles()
+
+
+@cli.command()
+@click.option('--query', required=True, help='The query to ask about the database schemas.')
+def query(query):
+    """Query the database schemas using the profiles as context."""
+    profiles_path = "./db/profiles/"
+    profiles_content = load_profiles(profiles_path)
+    if profiles_content is None:
+        click.echo("No profiles found. Please generate profiles first.")
+        return
+    prompt = construct_prompt(profiles_content, query)
+    response = query_openai(prompt)
+    if response:
+        click.echo(response)
 
 if __name__ == '__main__':
     cli()

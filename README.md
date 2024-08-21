@@ -19,13 +19,10 @@ Unlock the power of your database with **Cognitive Schema**! This innovative com
 ## Installation
 
 1. Install the package using pip:
-
    ```bash
-   pip install cognitive_schem`
+   pip install cognitive_schema
    ```
-
 2. Set your OpenAI API key as an environment variable:
-
    ```bash
    export OPENAI_API_KEY='your_openai_api_key'  # On Windows use: set OPENAI_API_KEY='your_openai_api_key'
    ```
@@ -74,7 +71,21 @@ _Expected Output:_
 Schema downloaded and profiles generated successfully!
 ```
 
-## Sample Report
+### Query Database Profiles
+
+To query the database schemas using the generated profiles, use the following command:
+
+```bash
+cognitive_schema query --query "What kind of SQL queries can you suggest me?"
+```
+
+_Expected Output:_
+
+```
+<AI-generated response based on the query and profiles>
+```
+
+## Sample Profile
 
 To illustrate the potential of **Cognitive Schema**, here’s an example profile for a table named `user_engagement_stats`:
 
