@@ -9,5 +9,6 @@
 !logo.png
 !examples
 !examples/**/*
+!publish.sh
 
 **/__pycache__
