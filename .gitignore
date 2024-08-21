@@ -1,0 +1,11 @@
+*
+!.gitignore
+!setup.py
+!cognitive_schema
+!cognitive_schema/**/*
+!requirements.txt
+!LICENSE
+!README.md
+!logo.png
+
+**/__pycache__
