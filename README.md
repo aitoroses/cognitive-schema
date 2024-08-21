@@ -18,23 +18,14 @@ Unlock the power of your database with **Cognitive Schema**! This innovative com
 
 ## Installation
 
-1. Clone the repository:
+1. Install the package using pip:
 
    ```bash
-   git clone https://github.com/yourusername/cognitive_schema.git
-   cd cognitive_schema
+   pip install cognitive_schem`
    ```
 
-2. Create a virtual environment (optional but recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
-   ```
-3. Install the required packages:
-   ```bash
-   pip install -e .
-   ```
-4. Set your OpenAI API key as an environment variable:
+2. Set your OpenAI API key as an environment variable:
+
    ```bash
    export OPENAI_API_KEY='your_openai_api_key'  # On Windows use: set OPENAI_API_KEY='your_openai_api_key'
    ```
