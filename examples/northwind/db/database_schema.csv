@@ -1,0 +1,93 @@
+table_name,column_name,data_type
+order_details,discount,real
+products,product_id,smallint
+employees,employee_id,smallint
+products,supplier_id,smallint
+products,category_id,smallint
+employee_territories,employee_id,smallint
+products,unit_price,real
+products,units_in_stock,smallint
+products,units_on_order,smallint
+products,reorder_level,smallint
+products,discontinued,integer
+categories,category_id,smallint
+orders,order_id,smallint
+territories,region_id,smallint
+categories,picture,bytea
+suppliers,supplier_id,smallint
+orders,employee_id,smallint
+employees,birth_date,date
+employees,hire_date,date
+orders,order_date,date
+orders,required_date,date
+orders,shipped_date,date
+orders,ship_via,smallint
+orders,freight,real
+us_states,state_id,smallint
+order_details,order_id,smallint
+employees,photo,bytea
+region,region_id,smallint
+order_details,product_id,smallint
+employees,reports_to,smallint
+order_details,unit_price,real
+shippers,shipper_id,smallint
+order_details,quantity,smallint
+employees,home_phone,character varying
+employees,extension,character varying
+employees,notes,text
+employees,photo_path,character varying
+shippers,company_name,character varying
+shippers,phone,character varying
+products,product_name,character varying
+products,quantity_per_unit,character varying
+categories,category_name,character varying
+categories,description,text
+suppliers,company_name,character varying
+suppliers,contact_name,character varying
+suppliers,contact_title,character varying
+suppliers,address,character varying
+suppliers,city,character varying
+suppliers,region,character varying
+suppliers,postal_code,character varying
+suppliers,country,character varying
+suppliers,phone,character varying
+suppliers,fax,character varying
+suppliers,homepage,text
+region,region_description,character varying
+customer_demographics,customer_type_id,character varying
+customer_demographics,customer_desc,text
+customer_customer_demo,customer_id,character varying
+territories,territory_id,character varying
+customer_customer_demo,customer_type_id,character varying
+territories,territory_description,character varying
+employee_territories,territory_id,character varying
+us_states,state_name,character varying
+us_states,state_abbr,character varying
+us_states,state_region,character varying
+customers,customer_id,character varying
+customers,company_name,character varying
+customers,contact_name,character varying
+customers,contact_title,character varying
+customers,address,character varying
+customers,city,character varying
+customers,region,character varying
+customers,postal_code,character varying
+customers,country,character varying
+customers,phone,character varying
+customers,fax,character varying
+orders,customer_id,character varying
+orders,ship_name,character varying
+orders,ship_address,character varying
+orders,ship_city,character varying
+orders,ship_region,character varying
+orders,ship_postal_code,character varying
+orders,ship_country,character varying
+employees,last_name,character varying
+employees,first_name,character varying
+employees,title,character varying
+employees,title_of_courtesy,character varying
+employees,address,character varying
+employees,city,character varying
+employees,region,character varying
+employees,postal_code,character varying
+employees,country,character varying

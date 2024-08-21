@@ -7,5 +7,7 @@
 !LICENSE
 !README.md
 !logo.png
+!examples
+!examples/**/*
 
 **/__pycache__
