@@ -13,7 +13,7 @@ client = OpenAI(
 )
 
 def generate_profiles():
-    """Generate reports for database profiles based on CSV files."""
+    """Generate database table profiles based on CSV files."""
     csv_path = "./db/data/"
     profiles_path = "./db/profiles/"
     os.makedirs(csv_path, exist_ok=True)
@@ -28,27 +28,27 @@ def generate_profiles():
             future.result()  # To raise any exceptions that occurred during processing
 
 def process_csv_file(file, profiles_path, total_files, index):
-    """Process a CSV file and generate a report."""
+    """Process a CSV file and generate a profile."""
     table_name = os.path.splitext(os.path.basename(file))[0]
-    report_filename = os.path.join(profiles_path, f"{table_name}.md")
+    profile_filename = os.path.join(profiles_path, f"{table_name}.md")
 
-    if os.path.exists(report_filename):
-        logging.info(f"Report for {table_name} already exists. Skipping... {index}/{total_files}")
+    if os.path.exists(profile_filename):
+        logging.info(f"Profile for {table_name} already exists. Skipping... {index}/{total_files}")
         return
 
     data = pd.read_csv(file)
-    logging.info(f"Generating report for {table_name} ({index}/{total_files})...")
+    logging.info(f"Generating profile for {table_name} ({index}/{total_files})...")
 
-    report = generate_report(table_name, data)
+    profile = generate_profile(table_name, data)
 
     os.makedirs(profiles_path, exist_ok=True)
-    with open(report_filename, "w") as f:
-        f.write(report)
+    with open(profile_filename, "w") as f:
+        f.write(profile)
 
-    logging.info(f"Report for {table_name} saved as {report_filename}. {index}/{total_files} reports completed.")
+    logging.info(f"Profile for {table_name} saved as {profile_filename}. {index}/{total_files} profiles completed.")
 
-def generate_report(table_name, data, rows=10):
-    """Generate a detailed report for a given table."""
+def generate_profile(table_name, data, rows=10):
+    """Generate a detailed profile for a given table."""
     prompt = f"""
     Generate a detailed profile for the table '{table_name}'. The table has the following sample data:
     {data.head(rows).to_string(index=False)}
@@ -72,5 +72,5 @@ def generate_report(table_name, data, rows=10):
 
         return response.choices[0].message.content
     except Exception as e:
-        logging.error(f"An error occurred while generating the report for {table_name}. Error: {e}")
-        return generate_report(table_name, data, int(rows / 2))
+        logging.error(f"An error occurred while generating the profile for {table_name}. Error: {e}")
+        return generate_profile(table_name, data, int(rows / 2))
