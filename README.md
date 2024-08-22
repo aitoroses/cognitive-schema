@@ -14,7 +14,7 @@ Unlock the power of your database with **Natural Lens**! This innovative command
 ## Requirements
 
 - Python 3.6 or higher
-- OpenAI API key (for generating profiles)
+- OpenAI API key
 
 ## Installation
 
