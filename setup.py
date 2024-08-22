@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='natural-lens',
-    version='0.1.0',
+    version='0.2.0',
     description='An drive CLI tool for downloading database schemas and generating profiles.',
     author='Aitor Oses',
     author_email='aitor.oses@example.com',
