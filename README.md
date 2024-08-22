@@ -20,7 +20,7 @@ Unlock the power of your database with **Natural Lens**! This innovative command
 
 1. Install the package using pip:
    ```bash
-   pip install natural_lens
+   pip install natural-lens
    ```
 2. Set your OpenAI API key as an environment variable:
    ```bash
@@ -28,6 +28,12 @@ Unlock the power of your database with **Natural Lens**! This innovative command
    ```
 
 ## Usage
+
+The CLI will be available as `nlens`. Run the following command to see the available options:
+
+```bash
+nlens --help
+```
 
 Refer to the [Northwind Example](./examples/northwind/README.md) to test **Natural Lens** with a sample PostgreSQL database.
 
