@@ -48,7 +48,9 @@ Once the database is up and running, you can execute the following commands to d
 
 3. **Query the Database**
    ```bash
-   nlens query --query "What kind of SQL queries can you suggest me?"
+   nlens query
+   Welcome to the query interface. Type 'exit' to quit.
+   > What kind of SQL queries can you suggest me?
    ```
 
 ## Query Output
