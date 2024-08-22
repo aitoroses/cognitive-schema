@@ -1,15 +1,16 @@
 # Natural Lens
 
-Unlock the power of your database with **Natural Lens**! This innovative command-line interface (CLI) tool not only downloads database schemas but also generates insightful profiles using cutting-edge AI technology. Say goodbye to tedious data analysis and hello to intelligent insights!
+Unlock the power of your database schema with **Natural Lens**! This innovative command-line interface (CLI) tool allows you to interactively explore your PostgreSQL database schema, generating insightful profiles and facilitating intelligent queries. Say goodbye to tedious data analysis and hello to a seamless dialogue with your database!
 
 <img src="./logo.png" alt="Natural Lens Logo" width="200" height="200">
 
 ## Features
 
-- **Effortlessly Download Schemas**: Quickly fetch database schemas from PostgreSQL with a single command.
-- **Instant Sample Data**: Automatically retrieve and save sample data for each table, ready for analysis.
-- **AI-Powered Insights**: Generate detailed profiles for each table, revealing hidden patterns and insights.
-- **User-Friendly CLI**: Enjoy a seamless command-line experience designed for both beginners and experts.
+- **Effortlessly Download Schemas**: Quickly connect to your PostgreSQL database and fetch the schema with a single command.
+- **Instant Sample Data**: Automatically retrieve and save sample data for each table, ready for in-depth analysis.
+- **AI-Powered Table Profiles**: Generate detailed profiles for each table, revealing their structure, purpose, and significant insights.
+- **Interactive Query Interface**: Engage in a conversational manner with your database schema, asking questions and receiving AI-generated responses based on the profiles.
+- **User-Friendly CLI**: Enjoy a seamless command-line experience designed for both beginners and experts, making database exploration intuitive and efficient.
 
 ## Requirements
 
