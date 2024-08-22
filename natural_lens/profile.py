@@ -9,7 +9,7 @@ client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
-def generate_profiles():
+def generate_profiles(database_prompt):
     """Generate database table profiles based on CSV files."""
     csv_path = "./data/"
     profiles_path = "./profiles/"
@@ -44,7 +44,7 @@ def process_csv_file(file, profiles_path, total_files, index):
 
     print(f"Profile for {table_name} saved as {profile_filename}. {index}/{total_files} profiles completed.")
 
-def generate_profile(table_name, data, rows=20):
+def generate_profile(table_name, data, rows=20, database_prompt=""):
     """Generate a detailed profile for a given table."""
     prompt = f"""
     Generate a detailed profile for the table '{table_name}'. The table has the following sample data:
@@ -55,6 +55,8 @@ def generate_profile(table_name, data, rows=20):
     - A summary of the table's purpose based on the data. [## Overview] section
     - An analysis of the most significant columns and what they represent using a table with [name, description, string | number | ..., `sample_data` - some values separated by commas]. (## Columns)
     - Any notable patterns or insights observed from the sample data. [## Insights] section. For this section consider that the data you observe is just a sample, it's not representative of the entire dataset but it provides some shape visibility.
+    
+    {database_prompt}
     """
 
     try:

@@ -1,16 +1,22 @@
 # Natural Lens
 
-Unlock the power of your database schema with **Natural Lens**! This innovative command-line interface (CLI) tool allows you to interactively explore your PostgreSQL database schema, generating insightful profiles and facilitating intelligent queries. Say goodbye to tedious data analysis and hello to a seamless dialogue with your database!
+Unlock the power of your database schema with **Natural Lens**! This innovative command-line interface (CLI) tool allows you to interactively explore your database schemas, generating insightful profiles and facilitating intelligent queries. Say goodbye to tedious data analysis and hello to a seamless dialogue with your database!
 
 <img src="./logo.png" alt="Natural Lens Logo" width="200" height="200">
 
 ## Features
 
-- **Effortlessly Download Schemas**: Quickly connect to your PostgreSQL database and fetch the schema with a single command.
+- **Effortlessly Download Schemas**: Quickly connect to your PostgreSQL or Trino database and fetch the schema with a single command.
 - **Instant Sample Data**: Automatically retrieve and save sample data for each table, ready for in-depth analysis.
 - **AI-Powered Table Profiles**: Generate detailed profiles for each table, revealing their structure, purpose, and significant insights.
 - **Interactive Query Interface**: Engage in a conversational manner with your database schema, asking questions and receiving AI-generated responses based on the profiles.
 - **User-Friendly CLI**: Enjoy a seamless command-line experience designed for both beginners and experts, making database exploration intuitive and efficient.
+- **Future Database Support**: We plan to support additional databases in the future, expanding the capabilities of **Natural Lens**.
+
+## Current Database Support
+
+- **PostgreSQL**
+- **Trino** (currently supports OAuth only)
 
 ## Requirements
 
@@ -36,7 +42,7 @@ The CLI will be available as `nlens`. Run the following command to see the avail
 nlens --help
 ```
 
-Refer to the [Northwind Example](./examples/northwind/README.md) to test **Natural Lens** with a sample PostgreSQL database.
+Refer to the [Northwind Example](./examples/northwind/README.md) to test **Natural Lens** with a sample PostgreSQL or Trino database.
 
 ## Troubleshooting
 

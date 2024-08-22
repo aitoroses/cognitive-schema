@@ -8,7 +8,7 @@
 !README.md
 !logo.png
 !examples
-!examples/**/*
+!examples/northwind
 !publish.sh
 
 **/__pycache__

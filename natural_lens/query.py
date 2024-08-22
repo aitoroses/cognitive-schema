@@ -22,19 +22,21 @@ def construct_prompt(profiles_content, query):
     Query: {query}
     """
 
-def query_openai(prompt):
+def query_openai(prompt, conversation):
     """Query the OpenAI API with the given prompt."""
     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+   
+    conversation.append({"role": "user", "content": prompt})
+
     try:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": "You are an expert in data analysis."},
-                {"role": "user", "content": prompt},
-            ],
+            messages=conversation,
             max_tokens=8192
         )
-        return response.choices[0].message.content
+
+        conversation.append({"role": "assistant", "content": response.choices[0].message.content})
+        return response.choices[0].message.content, conversation
     except Exception as e:
         click.echo(f"An error occurred while querying: {e}")
         return None
