@@ -1,8 +1,8 @@
-# Cognitive Schema
+# Natural Lens
 
-Unlock the power of your database with **Cognitive Schema**! This innovative command-line interface (CLI) tool not only downloads database schemas but also generates insightful profiles using cutting-edge AI technology. Say goodbye to tedious data analysis and hello to intelligent insights!
+Unlock the power of your database with **Natural Lens**! This innovative command-line interface (CLI) tool not only downloads database schemas but also generates insightful profiles using cutting-edge AI technology. Say goodbye to tedious data analysis and hello to intelligent insights!
 
-<img src="./logo.png" alt="Cognitive Schema Logo" width="200" height="200">
+<img src="./logo.png" alt="Natural Lens Logo" width="200" height="200">
 
 ## Features
 
@@ -20,7 +20,7 @@ Unlock the power of your database with **Cognitive Schema**! This innovative com
 
 1. Install the package using pip:
    ```bash
-   pip install cognitive_schema
+   pip install natural_lens
    ```
 2. Set your OpenAI API key as an environment variable:
    ```bash
@@ -29,23 +29,7 @@ Unlock the power of your database with **Cognitive Schema**! This innovative com
 
 ## Usage
 
-Refer to the [Northwind Example](./examples/northwind/README.md) to test **Cognitive Schema** with a sample PostgreSQL database.
-
-## Directory Structure
-
-```
-cognitive_schema/
-├── cognitive_schema/          # Main package directory
-│   ├── cli.py                 # CLI tool implementation
-│   ├── db/                    # Database-related modules
-│   │   ├── download_schema.py  # Module for downloading the database schema
-│   │   ├── generate_profiles.py # Module for generating database profiles
-├── LICENSE                    # License file (MIT License)
-├── README.md                  # Project documentation and instructions
-├── requirements.txt           # Requirements file for dependencies
-├── setup.py                   # Setup script for packaging the CLI tool
-└── CHANGELOG.md               # Changelog for tracking updates and changes
-```
+Refer to the [Northwind Example](./examples/northwind/README.md) to test **Natural Lens** with a sample PostgreSQL database.
 
 ## Troubleshooting
 
@@ -54,7 +38,7 @@ cognitive_schema/
 
 ## Contributing
 
-We love contributions! Whether you have a bug fix, a new feature, or just a suggestion, your input is invaluable. Join our community and help us make **Cognitive Schema** even better!
+We love contributions! Whether you have a bug fix, a new feature, or just a suggestion, your input is invaluable. Join our community and help us make **Natural Lens** even better!
 
 1. Fork the repository.
 2. Create a new branch.
@@ -70,4 +54,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Get Started Today!
 
-Ready to unlock the potential of your database? Clone the repository, set up your environment, and start exploring the world of intelligent data analysis with **Cognitive Schema**!
+Ready to unlock the potential of your database? Clone the repository, set up your environment, and start exploring the world of intelligent data analysis with **Natural Lens**!

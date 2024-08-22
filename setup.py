@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 from setuptools import setup, find_packages
 
 setup(
-    name='cognitive_schema',
+    name='natural-lens',
     version='0.2.0',
     description='An drive CLI tool for downloading database schemas and generating profiles.',
     author='Aitor Oses',
@@ -17,7 +17,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'cognitive_schema=cognitive_schema.cli:cli',
+            'nlens=natural_lens.cli:cli',
         ],
     },
     classifiers=[

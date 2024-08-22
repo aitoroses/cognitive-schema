@@ -14,8 +14,8 @@ client = OpenAI(
 
 def generate_profiles():
     """Generate database table profiles based on CSV files."""
-    csv_path = "./db/data/"
-    profiles_path = "./db/profiles/"
+    csv_path = "./data/"
+    profiles_path = "./profiles/"
     os.makedirs(csv_path, exist_ok=True)
 
     csv_files = glob.glob(os.path.join(csv_path, "*.csv"))
@@ -47,7 +47,7 @@ def process_csv_file(file, profiles_path, total_files, index):
 
     logging.info(f"Profile for {table_name} saved as {profile_filename}. {index}/{total_files} profiles completed.")
 
-def generate_profile(table_name, data, rows=10):
+def generate_profile(table_name, data, rows=20):
     """Generate a detailed profile for a given table."""
     prompt = f"""
     Generate a detailed profile for the table '{table_name}'. The table has the following sample data:

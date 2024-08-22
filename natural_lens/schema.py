@@ -3,9 +3,6 @@ import pandas as pd
 import logging
 import os
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
 def download_schema(dbname, user, password, host, port):
     """Connect to the database and download the schema and sample data."""
     logging.info("Establishing connection to the database.")
@@ -50,12 +47,11 @@ def download_schema(dbname, user, password, host, port):
     logging.info("Connection closed.")
 
     # Ensure the directories exist
-    os.makedirs("db", exist_ok=True)
-    os.makedirs("db/data", exist_ok=True)
+    os.makedirs("data", exist_ok=True)
 
     # Save schema and sample data to CSV files
     logging.info("Saving schema and sample data to CSV files.")
-    schema_df.to_csv("db/database_schema.csv", index=False)
+    schema_df.to_csv("schema.csv", index=False)
     for table, data in sample_data.items():
-        data.to_csv(f"db/data/{table}.csv", index=False)
+        data.to_csv(f"data/{table}.csv", index=False)
     logging.info("Schema and sample data saved to CSV files successfully.")

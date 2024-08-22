@@ -1,7 +1,12 @@
+import logging
 import click
 import click_spinner
-from .db import download_schema, generate_profiles
+from .schema import download_schema
+from .profile import generate_profiles 
 from .query import load_profiles, construct_prompt, query_openai
+
+# Configure logging
+logging.basicConfig(level=logging, format='%(asctime)s - %(levelname)s - %(message)s')
 
 @click.group()
 def cli():
@@ -24,22 +29,31 @@ def profile():
     generate_profiles()
 
 @cli.command()
-@click.option('--query', required=True, help='The query to ask about the database schemas.')
-def query(query):
+def query():
     """Query the database schemas using the profiles as context."""
-    profiles_path = "./db/profiles/"
+    profiles_path = "./profiles/"
     profiles_content = load_profiles(profiles_path)
     if profiles_content is None:
         click.echo("No profiles found. Please generate profiles first.")
         return
-    prompt = construct_prompt(profiles_content, query)
+    
+    click.echo("Welcome to the query interface. Type 'exit' to quit.")
+    
+    while True:
+        # Prompt the user for the query
+        query = click.prompt("", prompt_suffix='> ')
 
-    with click_spinner.spinner('Querying the database schemas...'):
-        response = query_openai(prompt)
+        # Check if the user wants to exit
+        if query.lower() == 'exit':
+            click.echo("Exiting the query interface.")
+            break
 
-    response = query_openai(prompt)
-    if response:
-        click.echo(response)
+        prompt = construct_prompt(profiles_content, query)
+        with click_spinner.spinner('Querying the database schemas...'):
+            response = query_openai(prompt)
+
+        if response:
+            click.echo(response)
 
 if __name__ == '__main__':
     cli()

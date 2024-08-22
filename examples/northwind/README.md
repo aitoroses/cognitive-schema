@@ -1,6 +1,6 @@
-# Northwind Example for Cognitive Schema
+# Northwind Example
 
-This example demonstrates how to use the **Cognitive Schema** tool with the Northwind PostgreSQL database. Follow the instructions below to set up the database using Docker and run the necessary commands.
+This example demonstrates how to use the **Natural Lens** tool with the Northwind PostgreSQL database. Follow the instructions below to set up the database using Docker and run the necessary commands.
 
 ## Setting Up the Database with Docker
 
@@ -18,37 +18,37 @@ To use this example, you can set up the Northwind PostgreSQL database using Dock
    docker-compose up -d
    ```
 
-## Running Cognitive Schema Commands
+## Running Natural Lens Commands
 
 Once the database is up and running, you can execute the following commands to download the schema, generate profiles, and query the database:
 
 1. **Download the Database Schema**
 
    ```bash
-   cognitive_schema download --dbname northwind --user postgres --host localhost --port 55432
+   nlens download --dbname northwind --user postgres --password postgres --host localhost --port 55432
    ```
 
    _Expected Output:_
 
    ```
-   Schema fetched successfully! Sample data saved to `db/data/`.
+   Schema fetched successfully! Sample data saved to `data/`.
    ```
 
 2. **Generate Database Profiles**
 
    ```bash
-   cognitive_schema profile
+   nlens profile
    ```
 
    _Expected Output:_
 
    ```
-   Profiles generated successfully! Profile saved to `db/profiles/`.
+   Profiles generated successfully! Profile saved to `profiles/`.
    ```
 
 3. **Query the Database**
    ```bash
-   cognitive_schema query --query "What kind of SQL queries can you suggest me?"
+   nlens query --query "What kind of SQL queries can you suggest me?"
    ```
 
 ## Query Output

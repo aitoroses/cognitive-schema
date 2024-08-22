@@ -1,8 +1,8 @@
 *
 !.gitignore
 !setup.py
-!cognitive_schema
-!cognitive_schema/**/*
+!natural_lens
+!natural_lens/**/*
 !requirements.txt
 !LICENSE
 !README.md
