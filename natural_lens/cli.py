@@ -6,7 +6,7 @@ from .profile import generate_profiles
 from .query import load_profiles, construct_prompt, query_openai
 
 # Configure logging
-logging.basicConfig(level=logging, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 @click.group()
 def cli():

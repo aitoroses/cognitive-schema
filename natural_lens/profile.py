@@ -5,9 +5,6 @@ import glob
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
 client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
 )
@@ -20,7 +17,7 @@ def generate_profiles():
 
     csv_files = glob.glob(os.path.join(csv_path, "*.csv"))
     total_files = len(csv_files)
-    logging.info(f"Found {total_files} CSV files in {csv_path}.")
+    print(f"Found {total_files} CSV files in {csv_path}.")
 
     with ThreadPoolExecutor() as executor:
         futures = [executor.submit(process_csv_file, file, profiles_path, total_files, index) for index, file in enumerate(csv_files, start=1)]
@@ -33,11 +30,11 @@ def process_csv_file(file, profiles_path, total_files, index):
     profile_filename = os.path.join(profiles_path, f"{table_name}.md")
 
     if os.path.exists(profile_filename):
-        logging.info(f"Profile for {table_name} already exists. Skipping... {index}/{total_files}")
+        print(f"Profile for {table_name} already exists. Skipping... {index}/{total_files}")
         return
 
     data = pd.read_csv(file)
-    logging.info(f"Generating profile for {table_name} ({index}/{total_files})...")
+    print(f"Generating profile for {table_name} ({index}/{total_files})...")
 
     profile = generate_profile(table_name, data)
 
@@ -45,7 +42,7 @@ def process_csv_file(file, profiles_path, total_files, index):
     with open(profile_filename, "w") as f:
         f.write(profile)
 
-    logging.info(f"Profile for {table_name} saved as {profile_filename}. {index}/{total_files} profiles completed.")
+    print(f"Profile for {table_name} saved as {profile_filename}. {index}/{total_files} profiles completed.")
 
 def generate_profile(table_name, data, rows=20):
     """Generate a detailed profile for a given table."""
