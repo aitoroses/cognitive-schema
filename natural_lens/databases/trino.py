@@ -85,7 +85,7 @@ class TrinoDatabase(BaseDatabase):
         return pd.read_sql(sample_query, self.conn)
         
     def get_prompt(self):
-        return f"This table belongs to a Trino database. Consider that tables are under the catalog={self.catalog} catalog and the schema={self.schema}."
+        return f"This tables belong to a Trino database. Consider that tables are under the catalog={self.catalog} catalog and the schema={self.schema}."
 
     def close(self):
         if self.conn:

@@ -6,12 +6,12 @@ Unlock the power of your database schema with **Natural Lens**! This innovative 
 
 ## Features
 
-- **Effortlessly Download Schemas**: Quickly connect to your PostgreSQL or Trino database and fetch the schema with a single command.
+- **Effortlessly Download Schemas**: Quickly connect to your database and fetch the schema with a single command.
 - **Instant Sample Data**: Automatically retrieve and save sample data for each table, ready for in-depth analysis.
 - **AI-Powered Table Profiles**: Generate detailed profiles for each table, revealing their structure, purpose, and significant insights.
 - **Interactive Query Interface**: Engage in a conversational manner with your database schema, asking questions and receiving AI-generated responses based on the profiles.
 - **User-Friendly CLI**: Enjoy a seamless command-line experience designed for both beginners and experts, making database exploration intuitive and efficient.
-- **Future Database Support**: We plan to support additional databases in the future, expanding the capabilities of **Natural Lens**.
+- **Future Database Support**: I plan to support additional databases in the future, expanding the capabilities of **Natural Lens**.
 
 ## Current Database Support
 
@@ -51,7 +51,7 @@ Refer to the [Northwind Example](./examples/northwind/README.md) to test **Natur
 
 ## Contributing
 
-We love contributions! Whether you have a bug fix, a new feature, or just a suggestion, your input is invaluable. Join our community and help us make **Natural Lens** even better!
+❤️ contributions! Whether you have a bug fix, a new feature, or just a suggestion, your input is invaluable. Join our community and help us make **Natural Lens** even better!
 
 1. Fork the repository.
 2. Create a new branch.
