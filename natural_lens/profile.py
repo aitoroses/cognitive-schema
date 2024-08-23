@@ -72,4 +72,5 @@ def generate_profile(table_name, data, rows=20, database_prompt=""):
         return response.choices[0].message.content
     except Exception as e:
         logging.error(f"An error occurred while generating the profile for {table_name}. Error: {e}")
+        print("Retrying generating the profile for {table_name} with fewer rows...")
         return generate_profile(table_name, data, int(rows / 2))
