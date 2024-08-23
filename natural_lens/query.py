@@ -14,12 +14,16 @@ def load_profiles(profiles_path):
             profiles_content += f.read() + "\n\n"
     return profiles_content
 
-def construct_prompt(profiles_content, query):
+def construct_prompt(db_context, profiles_content):
     """Construct the prompt for the OpenAI API."""
     return f"""
-    You are an expert in data analysis. Based on the following database profiles, answer the query:
+    You are an expert in data analysis. You have access to the profiles of a database schema with multiple tables:
+    
+    Here are the database profiles:
     {profiles_content}
-    Query: {query}
+
+    Here's the context about the database:
+    {db_context}
     """
 
 def query_openai(prompt, conversation):

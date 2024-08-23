@@ -70,7 +70,7 @@ def query():
 
     with open("prompt.txt", "r") as f:
         prompt = f.read()
-        conversation.append({"role": "system", "content": f"You are an expert in data analysis. {prompt}"})
+        conversation.append({"role": "system", "content": construct_prompt(prompt, profiles_content) })
     
     while True:
         # Prompt the user for the query
@@ -81,9 +81,8 @@ def query():
             click.echo("Exiting the query interface.")
             break
 
-        prompt = construct_prompt(profiles_content, query)
         with click_spinner.spinner('Querying the database schemas...'):
-            response, conversation = query_openai(prompt, conversation)
+            response, conversation = query_openai(query, conversation)
 
         if response:
             click.echo(response)
