@@ -64,7 +64,7 @@ def query():
         click.echo("No profiles found. Please generate profiles first.")
         return
     
-    click.echo("Welcome to the query interface. Type 'exit' to quit.")
+    click.echo("Welcome to the query interface. \n- Type 'exit' to quit.\n- Type 'edit' to use multiline input.")
 
     conversation = []
 
@@ -74,15 +74,21 @@ def query():
     
     while True:
         # Prompt the user for the query
-        query = click.prompt("", prompt_suffix='> ')
+        print("\n")
+        query = click.prompt("", prompt_suffix=">>> ")
 
         # Check if the user wants to exit
         if query.lower() == 'exit':
             click.echo("Exiting the query interface.")
             break
 
+        if query.lower() == 'edit':
+            query = click.edit().strip()
+
         with click_spinner.spinner('Querying the database schemas...'):
             response, conversation = query_openai(query, conversation)
+        
+        print("\n")
 
         if response:
             click.echo(response)
