@@ -1,7 +1,5 @@
 from setuptools import setup, find_packages
 
-from setuptools import setup, find_packages
-
 setup(
     name='natural-lens',
     version='0.3.0',
